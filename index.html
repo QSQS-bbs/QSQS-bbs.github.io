@@ -140,6 +140,7 @@ nav ul li a,.shouye,.luntan
 	height:500px;
 	width:1149px;
 	background: url(img/224564564.jpg);
+
 	float:left;
 }
 
@@ -245,7 +246,16 @@ nav ul li a,.shouye,.luntan
 	width:200px;
 	float: left;
 }
-
+*::selection{background:lightblue;color:white;}
+#Marquee
+{ 
+	height:30px; 
+	overflow:hidden;
+	margin-top:5px;}
+#Marquee div{ 
+	border:1px; 
+	height:88px;
+}
 </style>
 
 
@@ -282,13 +292,14 @@ nav ul li a,.shouye,.luntan
    <div class="content">
          <section class="mood">
            <div class="mood-content">
-               <div class="img-mood"><img src="5786efe994e5cc24532dd236.jpg"/></div>
+               <div class="img-mood"><img src="20170219145200.jpg"></div>
                <div class="text-mood">
                <div class="div1"></div>
 			    <div class="div2">
                                   <br /><br />&nbsp;To:cc~
                                  <p>&nbsp;&nbsp;
                                   你是我的小幸运
+                                   
                                  <br />&nbsp;&nbsp;&nbsp;要天天开心哦<br />&nbsp;&nbsp;&nbsp;                                  ^0^~</p>
                                  <br /><br /><br /> 
                                   &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
@@ -324,7 +335,7 @@ nav ul li a,.shouye,.luntan
                 </div>
 			    <div class="div5">
                                   <br /><br />&nbsp;To:燕燕
-                                  <p>&nbsp;&nbsp;我们做一辈子好朋友吧。
+                                  <p>&nbsp;&nbsp;我们.做一辈子好朋友吧。
                                   </p>
                                   <br /><br /><br /><br />
                                 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
@@ -416,7 +427,7 @@ nav ul li a,.shouye,.luntan
                   </div>
                 
                 </div>
-             <div class="img-dream"><img src="511eb09448d5b91062d46b41.jpg"/></div>
+             <div class="img-dream"><img src="20170219135617.jpg"/></div>
              </div>
         
         
@@ -426,11 +437,74 @@ nav ul li a,.shouye,.luntan
    </div>
    
    
-   <footer>
-   
-   
-   
-   </footer>
+<footer>
+
+	<div style="width:100%;height:5%;border:1px solid #67492C;margin-top:0;background:#000;
+    top:95%; ">
+    <div style="width:100px;height:100px;margin-top:-100px;"><img src="tree.png" width="100" height="100" /></div>
+	<div style="margin-top:15px;width:100px;float:left;">
+		<span style="text-align:center;font-size:12px;color:gray;">&ensp;© 2017 QSQSBBS.</span>
+	</div>
+    	<div style="width:80%;height:30px;text-align:center;margin:2px auto;padding-top:3px;background:#212121;border-radius:20px;">
+        	<span style="font-size: 14px; font-weight: 600; letter-spacing: 1px; text-shadow: 1px 0px 0px #9784F9; color: gray;">
+			
+<div id='Marquee'><!--滚动留言效果-->
+
+<div>
+Copyright © 2017.QSQSBBS All rights reserved.</div>
+<div >
+<span class='ly'>不要难过，不要回头，愿你所愿，终能实现。</span>
+&emsp;&emsp;---&ensp;<span class='lyname'>佚名</span>
+</div>
+<div >
+<span class='ly'>你若一直在，我便一直爱。</span>
+&emsp;&emsp;---&ensp;<span class='lyname'>佚名</span>
+</div>
+<div>
+<span class='ly'>任他凡事清浊，为你一笑间轮回甘堕。</span>
+&emsp;&emsp;---&ensp;<span class='lyname'>佚名</span>
+</div> 
+<div>
+<span class='ly'>如花美眷，似水流年，回得了过去，回不了当初。</span>
+&emsp;&emsp;---&ensp;<span class='lyname'>佚名</span>
+</div>
+<div>
+	<!--可继续添加-->
+</div>
+
+</div>
+
+			</span>
+		</div>
+	</div>
+	
+<script>
+var Mar = document.getElementById("Marquee");
+var child_div=Mar.getElementsByTagName("div")
+var picH = 88;//移动高度
+var scrollstep=1;//移动步幅,越大越快
+var scrolltime=20;//移动频度(毫秒)越大越慢
+var stoptime=3000;//间断时间(毫秒)
+var tmpH = 0;
+Mar.innerHTML += Mar.innerHTML;
+function start(){
+    if(tmpH < picH){
+        tmpH += scrollstep;
+        if(tmpH > picH )tmpH = picH ;
+        Mar.scrollTop = tmpH;
+        setTimeout(start,scrolltime);
+    }else{
+        tmpH = 0;
+        Mar.appendChild(child_div[0]);
+        Mar.scrollTop = 0;
+        setTimeout(start,stoptime);
+    }
+}
+onload=function(){setTimeout(start,stoptime)};
+</script>
+
+</footer>
+
 
 
 
